@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Herbivore
+  - obstacles
+  - Obstacle
+  - Egg
+  - Spider
   layers:
   - Default
   - TransparentFX

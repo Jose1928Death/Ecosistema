@@ -13,11 +13,11 @@ public class Seed : MonoBehaviour
     }
     private void germinate()
     {
-        if (transform.position.y < 0.5f)
+        if (transform.position.y < 1f)
         {
             Vector3 pos = new Vector3(transform.position.x, 0.5f, transform.position.z);
             Instantiate(tree, pos, Quaternion.identity);
         }
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
     }
 }

@@ -9,7 +9,7 @@ public class Tree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seedCreation = transform.GetChild(1).gameObject;
+        seedCreation = transform.gameObject;
         StartCoroutine("createSeed");
     }
     IEnumerator createSeed()

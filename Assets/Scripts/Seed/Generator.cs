@@ -16,10 +16,10 @@ public class Generator : MonoBehaviour
         int totalSeeds = 3;
         while (totalSeeds > 0)
         {
-            float x = Random.Range(-20.0F, 20.0F);
-            float z = Random.Range(-20.0F, 20.0F);
+            float x = Random.Range(-38.0F, 38.0F);
+            float z = Random.Range(-38.0F, 38.0F);
 
-            Vector3 pos = new Vector3(x, 20, z);
+            Vector3 pos = new Vector3(x, 2, z);
 
             Instantiate(seed, pos, Quaternion.identity);
 

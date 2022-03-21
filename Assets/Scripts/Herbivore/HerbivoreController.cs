@@ -19,17 +19,17 @@ public class HerbivoreController : MonoBehaviour
     private void Awake()
     {
         ojos = new GameObject[7];
-        ojos[0] = transform.GetChild(1).transform.GetChild(0).transform.gameObject;
-        ojos[1] = transform.GetChild(1).transform.GetChild(1).transform.gameObject;
-        ojos[2] = transform.GetChild(1).transform.GetChild(2).transform.gameObject;
-        ojos[3] = transform.GetChild(1).transform.GetChild(3).transform.gameObject;
-        ojos[4] = transform.GetChild(1).transform.GetChild(4).transform.gameObject;
-        ojos[5] = transform.GetChild(1).transform.GetChild(5).transform.gameObject;
-        ojos[6] = transform.GetChild(1).transform.GetChild(6).transform.gameObject;
+        ojos[0] = transform.GetChild(2).transform.GetChild(0).transform.gameObject;
+        ojos[1] = transform.GetChild(2).transform.GetChild(1).transform.gameObject;
+        ojos[2] = transform.GetChild(2).transform.GetChild(2).transform.gameObject;
+        ojos[3] = transform.GetChild(2).transform.GetChild(3).transform.gameObject;
+        ojos[4] = transform.GetChild(2).transform.GetChild(4).transform.gameObject;
+        ojos[5] = transform.GetChild(2).transform.GetChild(5).transform.gameObject;
+        ojos[6] = transform.GetChild(2).transform.GetChild(6).transform.gameObject;
 
         cuerpo = transform.GetChild(0).gameObject;
 
-        disparo = transform.GetChild(2).transform.GetChild(0).transform.gameObject;
+        disparo = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform.gameObject;
 
         nv = GetComponent<NavMeshAgent>();
 
@@ -178,7 +178,7 @@ public class HerbivoreController : MonoBehaviour
 
             if (Physics.Raycast(ojos[i].transform.position, ojos[i].transform.forward, out hit, 15))
             {
-                if(hit.transform.gameObject.tag == "Player")
+                if(hit.transform.gameObject.tag == "Spider")
                 {
                     PosicionObjetivo = hit.point;
                     encontrado = true;
