@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bala: {fileID: 6287370925564502961, guid: 6d0a413158104e641a3a8cb1c748c48a, type: 3}
+  animator: {fileID: 1874100915}
 --- !u!1001 &181450709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1908,7 +1909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033459281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84, z: 0.632}
+  m_LocalPosition: {x: 0, y: 0.717, z: 0.632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 580403944}
@@ -4004,7 +4005,7 @@ Animator:
   m_GameObject: {fileID: 1864757511}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b16fe07857155b4a9958d62d2666519, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

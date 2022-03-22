@@ -14,6 +14,8 @@ public class HerbivoreController : MonoBehaviour
     private Vector3 PosicionPatrulla;
     private bool encontrado;
 
+    Animator animator;
+
     private int vida = 10;
 
     private void Awake()
@@ -42,12 +44,17 @@ public class HerbivoreController : MonoBehaviour
         PosicionPatrulla = Vector3.zero;
         encontrado = false;
         cuerpo.GetComponent<Renderer>().material.color = Color.blue;
+
+        //controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+
         StartCoroutine("patrullar");
     }
 
 
     IEnumerator patrullar()
     {
+        animator.SetFloat("Run", 1);
         cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         destinoPatrulla();
@@ -109,6 +116,7 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator buscar()
     {
+        animator.SetFloat("Idle", 0);
         cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         float rotacion = 0;
@@ -143,6 +151,7 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator disparar()
     {
+        animator.SetFloat("Shoot", 0);
         cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         nv.ResetPath();
