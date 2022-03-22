@@ -54,7 +54,7 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator patrullar()
     {
-        animator.SetFloat("Run", 1);
+        animator.SetFloat("Run", 0);
         cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         destinoPatrulla();
@@ -86,6 +86,7 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator perseguir()
     {
+        animator.SetFloat("Run", 0);
         cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         while (true)
@@ -116,7 +117,7 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator buscar()
     {
-        animator.SetFloat("Idle", 0);
+        animator.SetFloat("Run", 1);
         cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         float rotacion = 0;
@@ -151,7 +152,8 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator disparar()
     {
-        animator.SetFloat("Shoot", 0);
+        animator.SetFloat("Run", 1);
+        //animator.SetFloat("Shoot", 0);
         cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         nv.ResetPath();
