@@ -12,6 +12,7 @@ public class AnimationsController : MonoBehaviour
 
     private Vector3 _lastPosition;
     private Quaternion _lastRotation;
+    private int vida = 20;
 
     private void Awake()
     {
@@ -39,6 +40,31 @@ public class AnimationsController : MonoBehaviour
             }
             transform.rotation = Quaternion.Lerp(transform.rotation,_lastRotation,10f*Time.deltaTime);
             _lastPosition = position;
+        }
+    }
+
+    public void quitarVida()
+    {
+        vida--;
+
+        if (vida <= 20 && vida > 15)
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+        }
+        else if (vida <= 15 && vida > 5)
+        {
+            GetComponent<Renderer>().material.color = Color.cyan;
+            //velocidad = 3;
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = Color.gray;
+            //velocidad = 1;
+        }
+
+        if (vida == 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 

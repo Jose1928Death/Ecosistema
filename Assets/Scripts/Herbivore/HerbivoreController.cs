@@ -20,7 +20,7 @@ public class HerbivoreController : MonoBehaviour
 
     private void Awake()
     {
-        ojos = new GameObject[7];
+        ojos = new GameObject[9];
         ojos[0] = transform.GetChild(2).transform.GetChild(0).transform.gameObject;
         ojos[1] = transform.GetChild(2).transform.GetChild(1).transform.gameObject;
         ojos[2] = transform.GetChild(2).transform.GetChild(2).transform.gameObject;
@@ -28,10 +28,12 @@ public class HerbivoreController : MonoBehaviour
         ojos[4] = transform.GetChild(2).transform.GetChild(4).transform.gameObject;
         ojos[5] = transform.GetChild(2).transform.GetChild(5).transform.gameObject;
         ojos[6] = transform.GetChild(2).transform.GetChild(6).transform.gameObject;
+        ojos[7] = transform.GetChild(2).transform.GetChild(7).transform.gameObject;
+        ojos[8] = transform.GetChild(2).transform.GetChild(8).transform.gameObject;
 
-        cuerpo = transform.GetChild(0).gameObject;
+        //cuerpo = transform.GetChild(0).gameObject;
 
-        disparo = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform.gameObject;
+        disparo = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform.gameObject;
 
         nv = GetComponent<NavMeshAgent>();
 
@@ -43,7 +45,7 @@ public class HerbivoreController : MonoBehaviour
         PosicionObjetivo = Vector3.zero;
         PosicionPatrulla = Vector3.zero;
         encontrado = false;
-        cuerpo.GetComponent<Renderer>().material.color = Color.blue;
+        //cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         //controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -55,7 +57,7 @@ public class HerbivoreController : MonoBehaviour
     IEnumerator patrullar()
     {
         animator.SetFloat("Run", 0);
-        cuerpo.GetComponent<Renderer>().material.color = Color.blue;
+        //cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         destinoPatrulla();
         nv.SetDestination(PosicionPatrulla);
@@ -87,7 +89,7 @@ public class HerbivoreController : MonoBehaviour
     IEnumerator perseguir()
     {
         animator.SetFloat("Run", 0);
-        cuerpo.GetComponent<Renderer>().material.color = Color.red;
+        //cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         while (true)
         {
@@ -118,7 +120,7 @@ public class HerbivoreController : MonoBehaviour
     IEnumerator buscar()
     {
         animator.SetFloat("Run", 1);
-        cuerpo.GetComponent<Renderer>().material.color = Color.blue;
+        //cuerpo.GetComponent<Renderer>().material.color = Color.blue;
 
         float rotacion = 0;
         
@@ -154,7 +156,7 @@ public class HerbivoreController : MonoBehaviour
     {
         animator.SetFloat("Run", 1);
         //animator.SetFloat("Shoot", 0);
-        cuerpo.GetComponent<Renderer>().material.color = Color.red;
+        //cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         nv.ResetPath();
         
@@ -187,7 +189,7 @@ public class HerbivoreController : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(ojos[i].transform.position, ojos[i].transform.forward, out hit, 15))
+            if (Physics.Raycast(ojos[i].transform.position, ojos[i].transform.forward, out hit, 30))
             {
                 if(hit.transform.gameObject.tag == "Spider")
                 {
@@ -202,7 +204,7 @@ public class HerbivoreController : MonoBehaviour
             }
             else
             {
-                Debug.DrawRay(ojos[i].transform.position, ojos[i].transform.forward * 15, Color.white);
+                Debug.DrawRay(ojos[i].transform.position, ojos[i].transform.forward * 30, Color.white);
             }
         }
     }
