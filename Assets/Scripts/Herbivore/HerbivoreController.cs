@@ -20,23 +20,7 @@ public class HerbivoreController : MonoBehaviour
 
     private void Awake()
     {
-        ojos = new GameObject[9];
-        ojos[0] = transform.GetChild(2).transform.GetChild(0).transform.gameObject;
-        ojos[1] = transform.GetChild(2).transform.GetChild(1).transform.gameObject;
-        ojos[2] = transform.GetChild(2).transform.GetChild(2).transform.gameObject;
-        ojos[3] = transform.GetChild(2).transform.GetChild(3).transform.gameObject;
-        ojos[4] = transform.GetChild(2).transform.GetChild(4).transform.gameObject;
-        ojos[5] = transform.GetChild(2).transform.GetChild(5).transform.gameObject;
-        ojos[6] = transform.GetChild(2).transform.GetChild(6).transform.gameObject;
-        ojos[7] = transform.GetChild(2).transform.GetChild(7).transform.gameObject;
-        ojos[8] = transform.GetChild(2).transform.GetChild(8).transform.gameObject;
-
-        //cuerpo = transform.GetChild(0).gameObject;
-
-        disparo = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform.gameObject;
-
-        nv = GetComponent<NavMeshAgent>();
-
+        vision();
     }
 
     // Start is called before the first frame update
@@ -53,6 +37,25 @@ public class HerbivoreController : MonoBehaviour
         StartCoroutine("patrullar");
     }
 
+    private void vision()
+    {
+        ojos = new GameObject[9];
+        ojos[0] = transform.GetChild(2).transform.GetChild(0).transform.gameObject;
+        ojos[1] = transform.GetChild(2).transform.GetChild(1).transform.gameObject;
+        ojos[2] = transform.GetChild(2).transform.GetChild(2).transform.gameObject;
+        ojos[3] = transform.GetChild(2).transform.GetChild(3).transform.gameObject;
+        ojos[4] = transform.GetChild(2).transform.GetChild(4).transform.gameObject;
+        ojos[5] = transform.GetChild(2).transform.GetChild(5).transform.gameObject;
+        ojos[6] = transform.GetChild(2).transform.GetChild(6).transform.gameObject;
+        ojos[7] = transform.GetChild(2).transform.GetChild(7).transform.gameObject;
+        ojos[8] = transform.GetChild(2).transform.GetChild(8).transform.gameObject;
+
+        //cuerpo = transform.GetChild(0).gameObject;
+
+        disparo = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform.gameObject;
+
+        nv = GetComponent<NavMeshAgent>();
+    }
 
     IEnumerator patrullar()
     {
@@ -154,9 +157,8 @@ public class HerbivoreController : MonoBehaviour
 
     IEnumerator disparar()
     {
+
         animator.SetFloat("Run", 1);
-        //animator.SetFloat("Shoot", 0);
-        //cuerpo.GetComponent<Renderer>().material.color = Color.red;
 
         nv.ResetPath();
         
@@ -183,6 +185,7 @@ public class HerbivoreController : MonoBehaviour
 
     private void mirar()
     {
+        vision();
         encontrado = false;
 
         for (int i=0;i<7;i++)
@@ -217,8 +220,6 @@ public class HerbivoreController : MonoBehaviour
         while (iteraciones < 1000)
         {
             iteraciones++;
-
-            //Debug.Log(iteracciones);
 
             int CoorX = Random.Range(0, 100) * 2;
             int CoorZ = Random.Range(0, 100) * 2;
