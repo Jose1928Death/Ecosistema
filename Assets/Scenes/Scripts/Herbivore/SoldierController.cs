@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HerbivoreController : MonoBehaviour
+public class SoldierController : MonoBehaviour
 {
     private GameObject[] ojos;
     private GameObject cuerpo;
@@ -186,7 +186,7 @@ public class HerbivoreController : MonoBehaviour
 
             if (Physics.Raycast(ojos[i].transform.position, ojos[i].transform.forward, out hit, 30))
             {
-                if(hit.transform.gameObject.tag == "Spider")
+                if(hit.transform.gameObject.tag == "Baby")
                 {
                     PosicionObjetivo = hit.point;
                     encontrado = true;

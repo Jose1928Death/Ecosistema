@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Egg
   - Spider
+  - Soldier
+  - Baby
   layers:
   - Default
   - TransparentFX

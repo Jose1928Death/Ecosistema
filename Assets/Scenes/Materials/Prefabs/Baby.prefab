@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: -4561926332688987541}
   m_Layer: 0
   m_Name: Baby
-  m_TagString: Spider
+  m_TagString: Baby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca74e4e3b3f37542855d0a115708497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: {fileID: 8321437789569786820, guid: f96b6a1da7b019d4cbcf5e716d99f720, type: 3}
+  egg: {fileID: 8321437789569786820, guid: f96b6a1da7b019d4cbcf5e716d99f720, type: 3}
 --- !u!1 &8608827392045416298
 GameObject:
   m_ObjectHideFlags: 0

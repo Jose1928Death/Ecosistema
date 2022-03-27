@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bala : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class bala : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Spider")
+        if (other.gameObject.tag == "Baby")
         {
             other.gameObject.GetComponent<SeedController>().quitarVida();
         }

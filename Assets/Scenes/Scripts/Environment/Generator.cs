@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-    public GameObject seed;
+    public GameObject egg;
     public GameObject soldier;
+    public int totalEggs;
+    public int totalSoldiers;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        StartCoroutine("generation");
+        while (GameObject.FindGameObjectsWithTag("Egg").Length == 0)
+        {
+            StartCoroutine("generationEgg");
+        }
+        while (GameObject.FindGameObjectsWithTag("Soldier").Length == 0)
+        {
+            StartCoroutine("generationSoldier");
+        }
     }
 
-    IEnumerator generation()
+    IEnumerator generationEgg()
     {
-        int totalSeeds = 3;
-        int totalSoldiers = 3;
-
-        while (totalSeeds > 0)
+        while (totalEggs > 0)
         {
             float x = Random.Range(-35.0F, 35.0F);
             float z = Random.Range(-35.0F, 35.0F);
 
             Vector3 pos = new Vector3(x, 10, z);
 
-            Instantiate(seed, pos, Quaternion.identity);
+            Instantiate(egg, pos, Quaternion.identity);
 
-            totalSeeds--;
+            totalEggs--;
             yield return new WaitForSeconds(0.5f);
         }
+    }
+    IEnumerator generationSoldier()
+    {
         while (totalSoldiers > 0)
         {
             float x = Random.Range(-38.0F, 38.0F);
