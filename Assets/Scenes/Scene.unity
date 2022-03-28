@@ -4959,8 +4959,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   egg: {fileID: 8321437789569786820, guid: f96b6a1da7b019d4cbcf5e716d99f720, type: 3}
   soldier: {fileID: 8651980270587055528, guid: 98a3fe7783dbd3c438aa658b21612950, type: 3}
-  totalEggs: 1
+  totalEggs: 3
   totalSoldiers: 5
+  totalBabies: 0
 --- !u!1001 &1825404639
 PrefabInstance:
   m_ObjectHideFlags: 0

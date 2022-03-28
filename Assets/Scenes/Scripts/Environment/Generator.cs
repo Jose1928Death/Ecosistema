@@ -8,17 +8,15 @@ public class Generator : MonoBehaviour
     public GameObject soldier;
     public int totalEggs;
     public int totalSoldiers;
+    public int totalBabies;
+
+    private int revEggs = 0;
+    private int revSoldiers = 0;
     // Start is called before the first frame update
     void Update()
     {
-        while (GameObject.FindGameObjectsWithTag("Egg").Length == 0)
-        {
             StartCoroutine("generationEgg");
-        }
-        while (GameObject.FindGameObjectsWithTag("Soldier").Length == 0)
-        {
             StartCoroutine("generationSoldier");
-        }
     }
 
     IEnumerator generationEgg()
@@ -33,7 +31,11 @@ public class Generator : MonoBehaviour
             Instantiate(egg, pos, Quaternion.identity);
 
             totalEggs--;
+            revEggs++;
             yield return new WaitForSeconds(0.5f);
+        }
+        if (GameObject.FindGameObjectsWithTag("Baby").Length == 0 && GameObject.FindGameObjectsWithTag("Egg").Length == 0) {
+            totalEggs = revEggs;
         }
     }
     IEnumerator generationSoldier()
@@ -48,7 +50,12 @@ public class Generator : MonoBehaviour
             Instantiate(soldier, pos, Quaternion.identity);
 
             totalSoldiers--;
+            revSoldiers--;
             yield return new WaitForSeconds(0.5f);
+        }
+        if (GameObject.FindGameObjectsWithTag("Soldier").Length == 0)
+        {
+            totalSoldiers = revSoldiers;
         }
     }
 }

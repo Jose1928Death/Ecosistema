@@ -28,8 +28,6 @@ public class SoldierController : MonoBehaviour
         ojos[4] = transform.GetChild(2).transform.GetChild(4).transform.gameObject;
         ojos[5] = transform.GetChild(2).transform.GetChild(5).transform.gameObject;
         ojos[6] = transform.GetChild(2).transform.GetChild(6).transform.gameObject;
-        ojos[7] = transform.GetChild(2).transform.GetChild(7).transform.gameObject;
-        ojos[8] = transform.GetChild(2).transform.GetChild(8).transform.gameObject;
 
         //cuerpo = transform.GetChild(0).gameObject;
 
