@@ -459,7 +459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ef1a11c58c28f4ba7c4e83812984b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: {fileID: 7539758340043923374, guid: e251dfe4957a54b4a99fd7d0964c1615, type: 3}
+  egg: {fileID: 0}
+  soldier: {fileID: 0}
+  totalEggs: 0
+  totalSoldiers: 0
+  totalBabies: 0
 --- !u!1 &4900734310820873860
 GameObject:
   m_ObjectHideFlags: 0
