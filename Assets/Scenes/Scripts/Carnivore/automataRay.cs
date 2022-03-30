@@ -7,7 +7,7 @@ using Unity.MLAgents.Sensors;
 
 public class automataRay : Agent
 {
-    public GameObject comida;
+    public GameObject soldier;
     public int velocidad;
     private Vector3 posOriginal;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class automataRay : Agent
     }
     public override void OnEpisodeBegin()
     {
-        transform.position = posOriginal;
+        //transform.position = posOriginal;
 
         float posObjX = Random.Range(-5.0f, 5.0f);
         if (posObjX > -0.5f && posObjX < 0.0f)
@@ -38,7 +38,8 @@ public class automataRay : Agent
         {
             posObjZ = posObjZ + 1;
         }
-        comida.transform.position = new Vector3(posOriginal.x + posObjX, 1, posOriginal.z + posObjZ);
+        //Destroy(this.gameObject);
+        //soldier.transform.position = new Vector3(posOriginal.x + posObjX, 1, posOriginal.z + posObjZ);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -88,6 +89,7 @@ public class automataRay : Agent
         {
             Debug.Log("Gana");
             AddReward(1.0f);
+            Destroy(collision.gameObject);
         }
 
         EndEpisode();
